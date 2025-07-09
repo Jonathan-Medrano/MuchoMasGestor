@@ -1,28 +1,14 @@
-import { Button } from "primereact/button";
+import { Routes, Route } from "react-router-dom";
+import UserPage from "./pages/user";
 
 function App() {
   return (
     <>
-      <Button label="Click Me" icon="pi pi-check" />
+      <Routes>
+        <Route path="/" element={<UserPage />} />
+      </Routes>
     </>
   );
 }
 
 export default App;
-
-// import { Routes, Route } from "react-router-dom";
-// import Inicio from "./pages/Inicio";
-// import Chat from "./pages/Chat";
-// import Mapa from "./pages/Mapa";
-
-// function App() {
-//   return (
-//     <Routes>
-//       <Route path="/" element={<Inicio />} />
-//       <Route path="/chat" element={<Chat />} />
-//       <Route path="/mapa" element={<Mapa />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;
