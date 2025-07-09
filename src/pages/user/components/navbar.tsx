@@ -17,7 +17,7 @@ export default function NavBar() {
   return (
     <>
       <div className="flex bg-white flex-row justify-between h-14">
-        <div className="flex flex-row gap-2 self-center pl-2">
+        <div className="flex flex-row gap-2 self-center pl-4">
           <FontAwesomeIcon icon={faBars} onClick={() => setActiveMenu(true)} />
         </div>
         <img
