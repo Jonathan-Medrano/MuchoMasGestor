@@ -1,4 +1,4 @@
-import logoMuchoMas from "../../../assets/img/logoMuchoMas.png";
+import logoMuchoMas from "../../../../assets/img/logoMuchoMas.png";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
