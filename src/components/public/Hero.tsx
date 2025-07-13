@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Hero() {
   const navigate = useNavigate();
   return (
-    <div className="h-96 w-screen">
+    <div className="w-screen h-[70vh]">
       <div
         className="relative h-full w-full bg-cover bg-center flex flex-col justify-center items-center group:"
         style={{ backgroundImage: `url(${HeroEjemplo})` }}

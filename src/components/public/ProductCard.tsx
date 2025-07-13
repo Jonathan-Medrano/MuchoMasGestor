@@ -34,13 +34,19 @@ export default function ProductCard({ place }: Props) {
           Auricular A6s
         </b>
         <div className="flex flex-col gap-0">
-          <p className="text-red-600 text-sm font-bold m-0">$6.500,00</p>
-          <p className="text-gray-500 text-xs line-through m-0">$6.500,00</p>
+          <p
+            className={`${
+              place === "destacados" ? "text-red-500" : "text-red-600"
+            } font-bold m-0`}
+          >
+            $6.500,00
+          </p>
+          <p className="text-gray-500 text-xs line-through m-0 ">$6.500,00</p>
         </div>
         <div className="h-4">
           <div
             className={`${
-              colors.length > 0 ? "flex flex-row gap-1.5" : "hidden"
+              colors.length > 0 ? "flex flex-row gap-2" : "hidden"
             }`}
           >
             {colors.map((color) => (
@@ -49,9 +55,11 @@ export default function ProductCard({ place }: Props) {
                 onClick={() => setSelectedColor(color.value)}
                 style={{ backgroundColor: color.value, borderRadius: "999px" }}
                 className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${
-                  selectedColor === color.value
-                    ? "border-white scale-110"
-                    : "border-transparent"
+                  selectedColor === color.value && place === "destacados"
+                    ? "border-white scale-150"
+                    : selectedColor === color.value && place !== "destacados"
+                    ? "border-black scale-150"
+                    : "border-black"
                 }`}
                 aria-label={`Seleccionar color ${color.name}`}
                 title={color.name}
@@ -69,6 +77,7 @@ export default function ProductCard({ place }: Props) {
                 place === "destacados" ? "text-white" : "text-black"
               } bi bi-dash-circle ml-2 hover:cursor-pointer`}
               onClick={() => {
+                if (selectCant === 1) return;
                 setSelectCant((prev) => prev - 1);
               }}
             ></i>
