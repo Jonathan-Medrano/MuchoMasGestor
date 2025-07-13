@@ -1,16 +1,13 @@
-import { Routes, Route } from "react-router-dom";
-import UserPage from "./pages";
-import Products from "./pages/products";
-import NavBar from "./pages/user/components/navbar/navbar";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<UserPage />} />
-        <Route path="/productos" element={<Products />} />
-      </Routes>
+      {/*  navbar */}
+      <AppRoutes />
+      {/*  footer */}
     </>
   );
 }
