@@ -59,14 +59,14 @@ export default function Footer() {
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">
-              <i className="bi bi-geo-alt pr-1" onClick={() => {}}></i>
+              <i className="bi bi-geo-alt pr-1"></i>
               2400 San Francisco Córdoba - Argentina
             </div>
           </Link>
         </div>
       </div>
       <div className="flex flex-row gap-1 text-xs pb-3">
-        <i className="bi bi-c-circle" onClick={() => {}}></i>
+        <i className="bi bi-c-circle"></i>
         2025 Mucho Mas. Todos los derechos reservados.
       </div>
     </div>
