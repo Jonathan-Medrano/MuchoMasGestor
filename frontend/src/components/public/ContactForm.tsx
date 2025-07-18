@@ -1,11 +1,10 @@
-import React from "react";
-import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Button, Form } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 export default function ContactForm() {
   return (
     <div className="flex flex-col gap-25 items-center justify-center">
-      <div className="flex flex-col items-center justify-center pt-40 w-screen gap-3">
+      <div className="flex flex-col items-center justify-center pt-40 w-full gap-3">
         <b className="text-4xl">Contáctanos</b>
         <span className="">
           Aquí puedes encontrar todos los canales disponibles mediante los
@@ -30,7 +29,7 @@ export default function ContactForm() {
           </Link>
         </div>
       </div>
-      <Form className="flex flex-col items-center justify-center w-screen gap-3">
+      <Form className="flex flex-col items-center justify-center w-full gap-3">
         <b className="text-4xl">Mándanos un Mensaje</b>
         <span className="">
           Llena todos los campos y envía tu mensaje. Te responderemos a la
@@ -84,7 +83,7 @@ export default function ContactForm() {
           </div>
         </div>
       </Form>
-      <div className="flex flex-col items-center justify-center w-screen gap-3">
+      <div className="flex flex-col items-center justify-center w-full gap-3">
         <b className="text-4xl">Visítanos</b>
         <div className="w-75">
           <iframe
@@ -100,5 +99,5 @@ export default function ContactForm() {
         </div>
       </div>
     </div>
-  );
+  )
 }

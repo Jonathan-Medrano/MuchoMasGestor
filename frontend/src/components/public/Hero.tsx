@@ -1,11 +1,10 @@
-import React from "react";
-import HeroEjemplo from "../../assets/img/HeroEjemplo.png";
-import { useNavigate } from "react-router-dom";
+import HeroEjemplo from "../../assets/img/HeroEjemplo.png"
+import { useNavigate } from "react-router-dom"
 
 export default function Hero() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
-    <div className="w-screen h-[70vh]">
+    <div className="w-full h-[70vh]">
       <div
         className="relative h-full w-full bg-cover bg-center flex flex-col justify-center items-center group:"
         style={{ backgroundImage: `url(${HeroEjemplo})` }}
@@ -38,5 +37,5 @@ export default function Hero() {
         </div>
       </div>
     </div>
-  );
+  )
 }

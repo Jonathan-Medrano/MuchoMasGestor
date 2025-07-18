@@ -1,11 +1,10 @@
-import React from "react";
-import MuchoMasLogo from "../../assets/img/logoMuchoMas.png";
-import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import MuchoMasLogo from "../../assets/img/logoMuchoMas.png"
+import { Form } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 export default function NavBarPublic() {
   return (
-    <div className="fixed top-0 bg-white left-0 z-50  flex flex-col items-center justify-center w-screen gap-3 pb-2 pt-3 border-b-1 border-gray-200">
+    <div className="fixed top-0 bg-white left-0 z-50  flex flex-col items-center justify-center w-full gap-3 pb-2 pt-3 border-b-1 border-gray-200">
       <div className="flex items-center justify-center gap-50">
         <div className="self-center text-center flex flex-row gap-3 flex-1">
           <i className="bi bi-list block"></i>
@@ -29,21 +28,21 @@ export default function NavBarPublic() {
       </div>
       <div className="flex flex-row gap-5">
         <Link
-          to={"/Inicio"}
+          to={"/"}
           style={{ textDecoration: "none" }}
           className="text-black border-b-2 border-transparent hover:border-black transition-colors duration-600"
         >
           Inicio
         </Link>
         <Link
-          to={"/Categorias"}
+          to={"/categorias"}
           style={{ textDecoration: "none" }}
           className="text-black border-b-2 border-transparent hover:border-black transition-colors duration-600"
         >
           Categorias
         </Link>
         <Link
-          to={"/Contacto"}
+          to={"/contacto"}
           style={{ textDecoration: "none" }}
           className="text-black border-b-2 border-transparent hover:border-black transition-colors duration-600"
         >
@@ -51,5 +50,5 @@ export default function NavBarPublic() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

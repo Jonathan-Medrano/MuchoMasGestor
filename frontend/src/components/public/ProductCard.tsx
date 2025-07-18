@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react"
 
 interface Props {
-  place?: string;
+  place?: "destacados"
 }
 
 export default function ProductCard({ place }: Props) {
-  const [selectedColor, setSelectedColor] = useState<string>("");
-  const [selectCant, setSelectCant] = useState<number>(1);
+  const [selectedColor, setSelectedColor] = useState<string>("")
+  const [selectCant, setSelectCant] = useState<number>(1)
 
   const colors = [
     { name: "Rojo", value: "#ef4444" },
     { name: "Verde", value: "#22c55e" },
     { name: "Azul", value: "#3b82f6" },
     { name: "Amarillo", value: "#eab308" },
-  ];
+  ]
+
   return (
     <div
       className="bg-transparent border-0 max-w-70"
@@ -49,22 +50,30 @@ export default function ProductCard({ place }: Props) {
               colors.length > 0 ? "flex flex-row gap-2" : "hidden"
             }`}
           >
-            {colors.map((color) => (
-              <button
-                key={color.name}
-                onClick={() => setSelectedColor(color.value)}
-                style={{ backgroundColor: color.value, borderRadius: "999px" }}
-                className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${
-                  selectedColor === color.value && place === "destacados"
+            {colors.map((color) => {
+              let colorClasses = "border-black" // default
+
+              if (selectedColor === color.value) {
+                colorClasses =
+                  place === "destacados"
                     ? "border-white scale-150"
-                    : selectedColor === color.value && place !== "destacados"
-                    ? "border-black scale-150"
-                    : "border-black"
-                }`}
-                aria-label={`Seleccionar color ${color.name}`}
-                title={color.name}
-              ></button>
-            ))}
+                    : "border-black scale-150"
+              }
+
+              return (
+                <button
+                  key={color.name}
+                  onClick={() => setSelectedColor(color.value)}
+                  style={{
+                    backgroundColor: color.value,
+                    borderRadius: "999px",
+                  }}
+                  className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${colorClasses}`}
+                  aria-label={`Seleccionar color ${color.name}`}
+                  title={color.name}
+                />
+              )
+            })}
           </div>
         </div>
         <div className="mt-2 flex flex-row gap-2">
@@ -77,8 +86,8 @@ export default function ProductCard({ place }: Props) {
                 place === "destacados" ? "text-white" : "text-black"
               } bi bi-dash-circle ml-2 hover:cursor-pointer`}
               onClick={() => {
-                if (selectCant === 1) return;
-                setSelectCant((prev) => prev - 1);
+                if (selectCant === 1) return
+                setSelectCant((prev) => prev - 1)
               }}
             ></i>
             <span
@@ -93,7 +102,7 @@ export default function ProductCard({ place }: Props) {
                 place === "destacados" ? "text-white" : "text-black"
               } bi bi-plus-circle mr-2 hover:cursor-pointer`}
               onClick={() => {
-                setSelectCant((prev) => prev + 1);
+                setSelectCant((prev) => prev + 1)
               }}
             ></i>
           </div>
@@ -111,5 +120,5 @@ export default function ProductCard({ place }: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

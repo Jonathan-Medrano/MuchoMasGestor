@@ -1,9 +1,8 @@
-import React from "react";
-import MuchoMasLogo from "../../assets/img/logoMuchoMas.png";
-import { Link } from "react-router-dom";
+import MuchoMasLogo from "../../assets/img/logoMuchoMas.png"
+import { Link } from "react-router-dom"
 export default function Footer() {
   return (
-    <div className="mt-15 w-screen bg-white h-40 flex flex-col items-center justify-center border-t-1 border-gray-200 gap-4 pt-15">
+    <div className="mt-15 w-full bg-white h-40 flex flex-col items-center justify-center border-t-1 border-gray-200 gap-4 pt-15">
       <div className=" border-b-1 border-gray-200 flex flex-row gap-38 pb-5">
         <div>
           <img src={MuchoMasLogo} alt="" className="w-35" />
@@ -71,5 +70,5 @@ export default function Footer() {
         2025 Mucho Mas. Todos los derechos reservados.
       </div>
     </div>
-  );
+  )
 }

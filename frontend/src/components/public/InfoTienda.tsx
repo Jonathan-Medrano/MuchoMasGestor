@@ -1,8 +1,6 @@
-import React from "react";
-
 export default function InfoTienda() {
   return (
-    <div className="h-30 border-b-1 border-gray-200 flex flex-row justify-center items-center gap-5">
+    <div className="h-30 border-b-1 border-gray-200 flex flex-row justify-center items-center gap-5 px-4">
       <div className="flex flex-row gap-2 max-w-75">
         <i className="bi bi-truck text-3xl"></i>
         <div className="flex flex-col gap-0.5">
@@ -39,5 +37,5 @@ export default function InfoTienda() {
         </div>
       </div>
     </div>
-  );
+  )
 }
