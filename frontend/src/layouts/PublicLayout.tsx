@@ -6,7 +6,7 @@ export default function PublicLayout() {
   return (
     <>
       <NavBarPublic />
-      <main className="flex flex-col min-h-screen w-full select-none">
+      <main className="flex flex-col min-h-screen w-full">
         <Outlet />
       </main>
       <Footer />
