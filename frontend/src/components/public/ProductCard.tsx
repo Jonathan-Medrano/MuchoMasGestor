@@ -110,10 +110,9 @@ export default function ProductCard({ place }: Props) {
             href="#"
             className={`${
               place === "destacados"
-                ? "bg-white text-black"
-                : "bg-blue-950 text-white"
-            }  p-2 flex-1 flex justify-center`}
-            style={{ textDecoration: "none", borderRadius: "999px" }}
+                ? "bg-gray-50 hover:bg-gray-300 text-black"
+                : "bg-blue-950 hover:bg-blue-800 text-white"
+            }  p-2 flex-1 flex justify-center rounded-full`}
           >
             <i className="bi bi-cart"></i>
           </a>
