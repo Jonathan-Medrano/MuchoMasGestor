@@ -1,4 +1,4 @@
-import MuchoMasLogo from "../../assets/img/logoMuchoMas.png"
+import MuchoMasLogo from "@assets/img/logoMuchoMas.png"
 import { Link } from "react-router-dom"
 export default function Footer() {
   return (

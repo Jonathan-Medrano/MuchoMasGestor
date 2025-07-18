@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom"
-import HomePage from "../pages/public/HomePage/HomePage"
-import Contact from "../pages/public/Contact/Contact"
-import PublicLayout from "../layouts/PublicLayout"
-// import ProductsPage from "../pages/ProductsPage";
-// import ContactPage from "../pages/ContactPage";
-// import AdminLogin from "../pages/AdminLogin";
-// import AdminDashboard from "../pages/admin/AdminDashboard";
+import HomePage from "@pages/public/HomePage/HomePage"
+import Contact from "@pages/public/Contact/Contact"
+import PublicLayout from "@layouts/PublicLayout"
+// import ProductsPage from "@pages/ProductsPage";
+// import ContactPage from "@pages/ContactPage";
+// import AdminLogin from "@pages/AdminLogin";
+// import AdminDashboard from "@pages/admin/AdminDashboard";
 
 export default function AppRoutes() {
   return (

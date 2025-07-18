@@ -1,4 +1,4 @@
-import HeroEjemplo from "../../assets/img/HeroEjemplo.png"
+import HeroEjemplo from "@assets/img/HeroEjemplo.png"
 import { useNavigate } from "react-router-dom"
 
 export default function Hero() {

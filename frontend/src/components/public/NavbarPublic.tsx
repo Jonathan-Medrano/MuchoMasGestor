@@ -1,4 +1,4 @@
-import MuchoMasLogo from "../../assets/img/logoMuchoMas.png"
+import MuchoMasLogo from "@assets/img/logoMuchoMas.png"
 import { Form } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
