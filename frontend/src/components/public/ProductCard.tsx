@@ -1,10 +1,16 @@
 import { useState } from "react"
 
-interface Props {
-  place?: "destacados"
+type Props = {
+  product: {
+    title: string
+    price: number
+    discount?: number
+    place?: "destacados" | "normal"
+  }
 }
 
-export default function ProductCard({ place }: Props) {
+export default function ProductCard({ product }: Props) {
+  const place = product.place ?? "normal"
   const [selectedColor, setSelectedColor] = useState<string>("")
   const [selectCant, setSelectCant] = useState<number>(1)
 
@@ -16,7 +22,7 @@ export default function ProductCard({ place }: Props) {
   ]
 
   return (
-    <div
+    <article
       className="bg-transparent border-0 max-w-70"
       style={{
         letterSpacing: " 1.25px",
@@ -28,28 +34,36 @@ export default function ProductCard({ place }: Props) {
         style={{ borderRadius: "15px" }}
         alt="Producto"
       />
-      <div className=" bg-transparent p-0 pt-2 flex flex-col gap-2">
+      <p className="bg-transparent p-0 pt-2 flex flex-col gap-2">
         <b
           className={`${place === "destacados" ? "text-white" : "text-black"}`}
         >
-          Auricular A6s
+          {product.title}
         </b>
-        <div className="flex flex-col gap-0">
+        {product.discount ? (
+          <div className="flex flex-col gap-0">
+            <p
+              className={`${
+                place === "destacados" ? "text-red-500" : "text-red-600"
+              } font-bold m-0`}
+            >
+              {product.discount}
+            </p>
+            <p className="text-gray-500 text-xs line-through m-0 ">
+              {product.price}
+            </p>
+          </div>
+        ) : (
           <p
             className={`${
-              place === "destacados" ? "text-red-500" : "text-red-600"
-            } font-bold m-0`}
+              place === "destacados" ? "text-white" : "text-black"
+            } `}
           >
-            $6.500,00
+            {product.price}
           </p>
-          <p className="text-gray-500 text-xs line-through m-0 ">$6.500,00</p>
-        </div>
-        <div className="h-4">
-          <div
-            className={`${
-              colors.length > 0 ? "flex flex-row gap-2" : "hidden"
-            }`}
-          >
+        )}
+        {colors.length > 0 && (
+          <section className="flex flex-row gap-2">
             {colors.map((color) => {
               let colorClasses = "border-black" // default
 
@@ -66,16 +80,17 @@ export default function ProductCard({ place }: Props) {
                   onClick={() => setSelectedColor(color.value)}
                   style={{
                     backgroundColor: color.value,
+                    borderRadius: "9999px",
                   }}
-                  className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${colorClasses}`}
+                  className={`w-3.5 h-3.5 border-2 transition-all ${colorClasses}`}
                   aria-label={`Seleccionar color ${color.name}`}
                   title={color.name}
                 />
               )
             })}
-          </div>
-        </div>
-        <div className="mt-2 flex flex-row gap-2">
+          </section>
+        )}
+        <section className="mt-2 flex flex-row gap-2">
           <div className="flex flex-row justify-between items-center flex-3 border-1 border-gray-500 p-2 rounded-full">
             <i
               className={`${
@@ -112,8 +127,8 @@ export default function ProductCard({ place }: Props) {
           >
             <i className="bi bi-cart"></i>
           </a>
-        </div>
-      </div>
-    </div>
+        </section>
+      </p>
+    </article>
   )
 }

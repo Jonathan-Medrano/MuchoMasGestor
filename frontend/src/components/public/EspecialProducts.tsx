@@ -1,5 +1,31 @@
 import ProductCard from "./ProductCard"
 
+const products = [
+  {
+    price: 6500,
+    title: "auris a6s",
+    discount: 4500,
+    place: "destacados" as const,
+  },
+  {
+    price: 6500,
+    title: "auris a6s",
+    place: "destacados" as const,
+  },
+  {
+    price: 6500,
+    title: "auris a6s",
+    discount: 4500,
+    place: "destacados" as const,
+  },
+  {
+    price: 6500,
+    title: "auris a6s",
+    discount: 4500,
+    place: "destacados" as const,
+  },
+]
+
 export default function EspecialProducts() {
   return (
     <div className=" bg-gray-950 flex flex-col justify-start items-center p-4">
@@ -8,10 +34,9 @@ export default function EspecialProducts() {
         Productos Destacados
       </span>
       <div className="flex flex-row gap-3">
-        <ProductCard place="destacados" />
-        <ProductCard place="destacados" />
-        <ProductCard place="destacados" />
-        <ProductCard place="destacados" />
+        {products.map((product, i) => (
+          <ProductCard product={product} key={`featured-product-${i}`} />
+        ))}
       </div>
     </div>
   )
