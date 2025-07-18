@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard"
 
 export default function EspecialProducts() {
   return (
-    <div className=" bg-blue-950 flex flex-col justify-start items-center p-4">
+    <div className=" bg-gray-950 flex flex-col justify-start items-center p-4">
       <span className="text-xs text-white pb-2">NUESTROS FAVORITOS</span>
       <span className="text-3xl text-white pb-4 font-bold">
         Productos Destacados
