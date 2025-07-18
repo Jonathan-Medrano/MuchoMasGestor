@@ -67,7 +67,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-row gap-1 text-sm pb-3">
         <i className="bi bi-c-circle"></i>
-        2025 Mucho Mas. Todos los derechos reservados.
+        {new Date().getFullYear()} Mucho Mas. Todos los derechos reservados.
       </div>
     </div>
   )
