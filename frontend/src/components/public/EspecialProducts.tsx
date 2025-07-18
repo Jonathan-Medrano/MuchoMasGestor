@@ -6,23 +6,27 @@ const products = [
     title: "auris a6s",
     discount: 4500,
     place: "destacados" as const,
+    stock: 10,
   },
   {
     price: 6500,
     title: "auris a6s",
     place: "destacados" as const,
+    stock: 10,
   },
   {
     price: 6500,
     title: "auris a6s",
     discount: 4500,
     place: "destacados" as const,
+    stock: 10,
   },
   {
     price: 6500,
     title: "auris a6s",
     discount: 4500,
     place: "destacados" as const,
+    stock: 10,
   },
 ]
 

@@ -1,3 +1,5 @@
+import Add from "@components/buttons/Add"
+import Subtract from "@components/buttons/Subtract"
 import { useState } from "react"
 
 type Props = {
@@ -6,6 +8,7 @@ type Props = {
     price: number
     discount?: number
     place?: "destacados" | "normal"
+    stock: number
   }
 }
 
@@ -30,8 +33,7 @@ export default function ProductCard({ product }: Props) {
     >
       <img
         src="https://images.fravega.com/f1000/7e573b39ebab4b6fc29a04d7fa72ed3b.png"
-        className="card-img-top"
-        style={{ borderRadius: "15px" }}
+        className="rounded-lg"
         alt="Producto"
       />
       <p className="bg-transparent p-0 pt-2 flex flex-col gap-2">
@@ -65,13 +67,13 @@ export default function ProductCard({ product }: Props) {
         {colors.length > 0 && (
           <section className="flex flex-row gap-2">
             {colors.map((color) => {
-              let colorClasses = "border-black" // default
+              let colorClasses = "border-black border-1" // default
 
               if (selectedColor === color.value) {
                 colorClasses =
                   place === "destacados"
-                    ? "border-white scale-150"
-                    : "border-black scale-150"
+                    ? "border-white scale-150 border-2"
+                    : "border-black scale-150 border-2"
               }
 
               return (
@@ -80,9 +82,8 @@ export default function ProductCard({ product }: Props) {
                   onClick={() => setSelectedColor(color.value)}
                   style={{
                     backgroundColor: color.value,
-                    borderRadius: "9999px",
                   }}
-                  className={`w-3.5 h-3.5 border-2 transition-all ${colorClasses}`}
+                  className={`w-3.5 h-3.5 transition-all rounded-circle ${colorClasses}`}
                   aria-label={`Seleccionar color ${color.name}`}
                   title={color.name}
                 />
@@ -91,16 +92,13 @@ export default function ProductCard({ product }: Props) {
           </section>
         )}
         <section className="mt-2 flex flex-row gap-2">
-          <div className="flex flex-row justify-between items-center flex-3 border-1 border-gray-500 p-2 rounded-full">
-            <i
-              className={`${
-                place === "destacados" ? "text-white" : "text-black"
-              } bi bi-dash-circle ml-2 hover:cursor-pointer`}
-              onClick={() => {
-                if (selectCant === 1) return
-                setSelectCant((prev) => prev - 1)
-              }}
-            ></i>
+          <div className="flex flex-row justify-between items-center flex-3 border-1 border-gray-500 px-2 py-1 rounded-full">
+            <Subtract
+              currentAmount={selectCant}
+              place={place}
+              subtract={() => setSelectCant((prev) => prev - 1)}
+            />
+
             <span
               className={`${
                 place === "destacados" ? "text-white" : "text-black"
@@ -108,14 +106,13 @@ export default function ProductCard({ product }: Props) {
             >
               {selectCant}
             </span>
-            <i
-              className={`${
-                place === "destacados" ? "text-white" : "text-black"
-              } bi bi-plus-circle mr-2 hover:cursor-pointer`}
-              onClick={() => {
-                setSelectCant((prev) => prev + 1)
-              }}
-            ></i>
+
+            <Add
+              currentAmount={selectCant}
+              place={place}
+              add={() => setSelectCant((prev) => prev + 1)}
+              stock={product.stock}
+            />
           </div>
           <a
             href="#"
