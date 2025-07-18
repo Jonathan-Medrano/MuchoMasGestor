@@ -11,14 +11,14 @@ export default function Footer() {
           <b className="text-sm pb-2">Categorías</b>
           <Link
             to={""}
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">Catálogo</div>
           </Link>
           <Link
             to={""}
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">Contacto</div>
@@ -28,21 +28,21 @@ export default function Footer() {
           <b className="text-sm pb-2">Información</b>
           <Link
             to={""}
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">Términos y Condiciones</div>
           </Link>
           <Link
             to={""}
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">Politica de reembolso</div>
           </Link>
           <Link
             to={""}
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">Politica de privacidad</div>
@@ -55,7 +55,7 @@ export default function Footer() {
               "https://www.google.com/maps?q=2400,+San+Francisco,+,+Argentina"
             }
             target="_blank"
-            className="text-xs text-black pb-1"
+            className="text-sm text-black pb-1"
             style={{ textDecoration: "none" }}
           >
             <div className=" hover:text-cyan-800">
@@ -65,7 +65,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row gap-1 text-xs pb-3">
+      <div className="flex flex-row gap-1 text-sm pb-3">
         <i className="bi bi-c-circle"></i>
         2025 Mucho Mas. Todos los derechos reservados.
       </div>
