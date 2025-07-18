@@ -66,7 +66,6 @@ export default function ProductCard({ place }: Props) {
                   onClick={() => setSelectedColor(color.value)}
                   style={{
                     backgroundColor: color.value,
-                    borderRadius: "999px",
                   }}
                   className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${colorClasses}`}
                   aria-label={`Seleccionar color ${color.name}`}
@@ -77,10 +76,7 @@ export default function ProductCard({ place }: Props) {
           </div>
         </div>
         <div className="mt-2 flex flex-row gap-2">
-          <div
-            className="flex flex-row justify-between items-center flex-3 border-1 border-gray-500 p-2"
-            style={{ borderRadius: "999px" }}
-          >
+          <div className="flex flex-row justify-between items-center flex-3 border-1 border-gray-500 p-2 rounded-full">
             <i
               className={`${
                 place === "destacados" ? "text-white" : "text-black"
