@@ -5,11 +5,11 @@ import LastProducts from "@components/public/LastProducts"
 
 export default function HomePage() {
   return (
-    <div className="">
+    <>
       <Hero />
       <InfoTienda />
       <EspecialProducts />
       <LastProducts />
-    </div>
+    </>
   )
 }
